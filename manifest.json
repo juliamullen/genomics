@@ -1,0 +1,13 @@
+{
+    "version": "0.2",
+    "dumper" : {
+        "schedule" : "0 0,6,12,18 * * *", 
+        "data_url" : ["https://storage.googleapis.com/andersen-lab_temp/outbreak_genomics/api_data.json.gz"],
+        "uncompress" : false 
+    },
+    "uploader" : { 
+        "parser" : "parser:load_annotations",
+        "on_duplicates" : "error",
+        "mapping": "mapping:get_customized_mapping"
+    }
+}
