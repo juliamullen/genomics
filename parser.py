@@ -14,5 +14,6 @@ def load_annotations(data_folder):
         datum['_id'] = datum['accession_id']
         yield datum
 
-def release():
+
+def release(self):
     return datetime.datetime.now().strftime('%Y-%m-%d-%H:%M')
