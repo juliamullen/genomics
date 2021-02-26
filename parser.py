@@ -1,7 +1,6 @@
 import json
 import gzip
 import os
-import datetime
 
 from biothings import config
 logger = config.logger
@@ -13,7 +12,3 @@ def load_annotations(data_folder):
     for datum in data:
         datum['_id'] = datum['accession_id']
         yield datum
-
-
-def release(self):
-    return datetime.datetime.now().strftime('%Y-%m-%d-%H:%M')
