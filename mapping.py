@@ -7,7 +7,8 @@ def get_customized_mapping(cls):
                         "type": "keyword"
                         },
                     "mutation": {
-                        "type": "keyword"
+                        "type": "keyword",
+                        "normalizer": "keyword_lowercase_normalizer"
                         },
                     "gene": {
                         "type": "keyword"
@@ -49,10 +50,16 @@ def get_customized_mapping(cls):
                 },
             "division": {
                 "type": "keyword",
+                },
+            "division_lower": {
+                "type": "keyword",
                 "normalizer": "keyword_lowercase_normalizer"
 
                 },
         "country": {
+                "type": "keyword",
+                },
+        "country_lower": {
                 "type": "keyword",
                 "normalizer": "keyword_lowercase_normalizer"
 
@@ -78,6 +85,13 @@ def get_customized_mapping(cls):
 
                 },
         "location": {
+                "type": "keyword"
+                },
+        "location_lower": {
+                "type": "keyword",
+                "normalizer": "keyword_lowercase_normalizer"
+                },
+        "location_id": {
                 "type": "keyword"
                 },
         "division_id": {
