@@ -3,7 +3,19 @@ import gzip
 import os
 
 from biothings import config
+
+from .gisaid_secret import AUTH_TOKEN
+import requests
+
 logger = config.logger
+
+def update_not_smaller(new_data_file):
+    new_num_lines = sum(1 for line in open(new_data_file))
+    current_metadata = requests.get("https://api.outbreak.info/genomics/metadata", headers={'Authorization': secrets.GEN_AUTH})
+    old_num_lines = current_metadata.json()['stats']['total']
+
+    if old_num_lines > new_num_lines:
+        raise RuntimeError(f"Attempted update with fewer documents failed. Current: {old_num_lines} New: {new_num_lines}")
 
 def load_annotations(data_folder):
     json_path = os.path.join(data_folder, "new_api_data.json.gz")
