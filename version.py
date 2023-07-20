@@ -1,6 +1,6 @@
 def get_release(self):
     import requests
-    res = requests.get('http://storage.googleapis.com/andersen-lab_temp/outbreak_genomics/new_api_metadata.json')
+    res = requests.get('http://su13/outbreak/genomics/new_api_metadata.json')
     try:
         return res.json()['date_modified']
     except AttributeError:
