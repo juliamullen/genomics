@@ -2,13 +2,25 @@
     "version": "0.2",
     "dumper" : {
         "schedule" : "20 9,21 * * *",
-        "data_url" : ["http://su13/outbreak/genomics/new_api_data.json.gz"],
+        "data_url" : [
+            "http://su13/outbreak/genomics/data.mutless.jsonl.gz",
+            "http://su13/outbreak/genomics/data.muts.jsonl.gz"
+        ],
         "uncompress" : false,
         "release": "version:get_release"
     },
-    "uploader" : {
-        "parser" : "parser:load_annotations",
-        "on_duplicates" : "error",
-        "mapping": "mapping:get_customized_mapping"
-    }
+    "uploaders" : [
+        {
+            "name" : "genomics_api_data_muts",
+            "parser" : "parser:load_data_muts",
+            "on_duplicates" : "error",
+            "mapping" : "mapping:mapping_data_muts"
+        },
+        {
+            "name" : "genomics_api_data_mutless",
+            "parser" : "parser:load_data_mutless",
+            "on_duplicates" : "error",
+            "mapping" : "mapping:mapping_data_mutless"
+        }
+    ]
 }
