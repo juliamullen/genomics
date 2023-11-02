@@ -22,7 +22,7 @@ def load_data_muts(data_folder):
     with gzip.open(json_path) as f:
         for line in f:
             datum = json.loads(line)
-            datum['_id'] = datum['accession_id']
+            datum['_id'] = datum['id']
             yield datum
 
 def load_data_mutless(data_folder):
@@ -30,5 +30,5 @@ def load_data_mutless(data_folder):
     with gzip.open(json_path) as f:
         for line in f:
             datum = json.loads(line)
-            datum['_id'] = datum['accession_id']
+            datum['_id'] = str(datum['accession_id'])
             yield datum

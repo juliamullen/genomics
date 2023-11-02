@@ -11,13 +11,13 @@
     },
     "uploaders" : [
         {
-            "name" : "genomics_api_data_muts",
+            "name" : "genomics_data_muts",
             "parser" : "parser:load_data_muts",
             "on_duplicates" : "error",
             "mapping" : "mapping:mapping_data_muts"
         },
         {
-            "name" : "genomics_api_data_mutless",
+            "name" : "genomics_data_mutless",
             "parser" : "parser:load_data_mutless",
             "on_duplicates" : "error",
             "mapping" : "mapping:mapping_data_mutless"

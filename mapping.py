@@ -34,6 +34,10 @@ def mapping_data_mutless(cls):
             "type": "keyword",
             "normalizer": "keyword_lowercase_normalizer"
         },
+        "pangolin_lineage_crumbs": {
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
         "location": {
             "type": "keyword"
         },
