@@ -1,113 +1,90 @@
-def get_customized_mapping(cls):
+def mapping_data_mutless(cls):
     return {
-            "mutations": {
-                "type": "nested",
-                "properties": {
-                    "type": {
-                        "type": "keyword"
-                        },
-                    "mutation": {
-                        "type": "keyword",
-                        "normalizer": "keyword_lowercase_normalizer"
-                        },
-                    "gene": {
-                        "type": "keyword"
-                        },
-                    "ref_codon": {
-                        "type": "keyword"
-                        },
-                    "pos": {
-                        "type": "keyword"
-                        },
-                    "alt_codon": {
-                        "type": "keyword"
-                        },
-                    "is_synonymous": {
-                        "type": "keyword"
-                        },
-                    "ref_aa": {
-                        "type": "keyword"
-                        },
-                    "codon_num": {
-                        "type": "keyword"
-                        },
-                    "alt_aa": {
-                        "type": "keyword"
-                        },
-                    "absolute_coords": {
-                        "type": "keyword"
-                        },
-                    "change_length_nt": {
-                        "type": "keyword"
-                        },
-                    "nt_map_coords": {
-                        "type": "keyword"
-                        },
-                    "aa_map_coords": {
-                        "type": "keyword"
-                        }
-                    }
-                },
-            "division": {
-                "type": "keyword",
-                },
-            "division_lower": {
-                "type": "keyword",
-                "normalizer": "keyword_lowercase_normalizer"
-
-                },
+        "mutations": {
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
+        "division": {
+            "type": "keyword",
+        },
+        "division_lower": {
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
         "country": {
-                "type": "keyword",
-                },
+            "type": "keyword",
+        },
         "country_lower": {
-                "type": "keyword",
-                "normalizer": "keyword_lowercase_normalizer"
-
-                },
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
         "date_submitted": {
-                "type": "keyword"
-                },
+            "type": "keyword"
+        },
         "date_collected": {
-                "type": "keyword"
-                },
+            "type": "keyword"
+        },
         "date_modified": {
-                "type": "keyword"
-                },
+            "type": "keyword"
+        },
         "country_id": {
-                "type": "keyword"
-                },
-        "authors": {
-                "type": "keyword"
-                },
+            "type": "keyword"
+        },
         "pangolin_lineage": {
-                "type": "keyword",
-                "normalizer": "keyword_lowercase_normalizer"
-
-                },
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
+        "pangolin_lineage_crumbs": {
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
         "location": {
-                "type": "keyword"
-                },
+            "type": "keyword"
+        },
         "location_lower": {
-                "type": "keyword",
-                "normalizer": "keyword_lowercase_normalizer"
-                },
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
         "location_id": {
-                "type": "keyword"
-                },
+            "type": "keyword"
+        },
         "division_id": {
-                "type": "keyword"
-                },
+            "type": "keyword"
+        },
         "accession_id": {
-                "type": "keyword"
-                },
-        "clade": {
-                "type": "keyword"
-                },
-        "pango_version": {
-                "type": "keyword"
-                },
-        "country_normed": {
-                "type": "keyword"
-                }
+            "type": "keyword"
+        }
+    }
 
-}
+
+def mapping_data_muts(cls):
+    return {
+        "type": {
+            "type": "keyword"
+        },
+        "mutation": {
+            "type": "keyword",
+            "normalizer": "keyword_lowercase_normalizer"
+        },
+        "gene": {
+            "type": "keyword"
+        },
+        "ref_codon": {
+            "type": "keyword"
+        },
+        "alt_codon": {
+            "type": "keyword"
+        },
+        "is_synonymous": {
+            "type": "keyword"
+        },
+        "ref_aa": {
+            "type": "keyword"
+        },
+        "codon_num": {
+            "type": "keyword"
+        },
+        "alt_aa": {
+            "type": "keyword"
+        }
+    }
